@@ -36,4 +36,14 @@ class CustomerGenreTest {
 
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    void getSongsBoughtFromGenre_ValidNoInput_ShouldReturnNumberOfSongsBoughtFromGenre() {
+        int expectedResult = 10;
+        int actualResult;
+
+        actualResult = testCustomerGenre.getSongsBoughtFromGenre();
+
+        assertEquals(expectedResult, actualResult);
+    }
 }

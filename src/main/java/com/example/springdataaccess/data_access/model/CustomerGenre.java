@@ -4,7 +4,7 @@ public class CustomerGenre {
     private int customerID;
     private String favoriteGenre;
 
-    CustomerGenre (int customerID, String favoriteGenre) {
+    public CustomerGenre(int customerID, String favoriteGenre) {
         setCustomerID(customerID);
         setFavoriteGenre(favoriteGenre);
     }

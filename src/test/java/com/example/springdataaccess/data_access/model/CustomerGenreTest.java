@@ -17,10 +17,17 @@ class CustomerGenreTest {
     }
 
     @Test
-    void getCustomerID() {
+    void getCustomerID_ValidNoInput_ShouldReturnID() {
+        int expectedID = 1;
+        int actualID;
+
+        actualID = testCustomerGenre.getCustomerID();
+
+        assertEquals(expectedID, actualID);
     }
 
     @Test
     void getFavoriteGenre() {
+        assertEquals(1, 1);
     }
 }

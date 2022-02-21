@@ -11,7 +11,7 @@ public class CustomerGenreDAO {
     public List<CustomerGenre> getFavoriteGenres(int customerID) {
         List<CustomerGenre> favoriteGenres = new ArrayList<>();
         String sql = """
-    SELECT Genre.GenreId, Genre.Name, count(*) AS 'GenresBought'
+    SELECT Genre.GenreId, Genre.Name, count(*) AS 'SongsBoughtFromGenre'
     FROM Customer
         INNER JOIN Invoice
             ON Customer.CustomerId = Invoice.CustomerId
@@ -23,8 +23,8 @@ public class CustomerGenreDAO {
             ON Genre.GenreId = Track.GenreId
     WHERE Customer.CustomerId = ?
     GROUP BY Genre.GenreId, Genre.Name
-    HAVING GenresBought = (
-        SELECT count(*) AS 'GenresBought'
+    HAVING SongsBoughtFromGenre = (
+        SELECT count(*) AS 'SongsBoughtFromGenre'
         FROM Customer
             INNER JOIN Invoice
                 ON Customer.CustomerId = Invoice.CustomerId
@@ -36,7 +36,7 @@ public class CustomerGenreDAO {
                 ON Genre.GenreId = Track.GenreId
         WHERE Customer.CustomerId = 57
         GROUP BY Genre.Name
-        ORDER BY GenresBought desc LIMIT 1);
+        ORDER BY SongsBoughtFromGenre desc LIMIT 1);
 """;
 
         try (Connection conn =
@@ -50,8 +50,9 @@ public class CustomerGenreDAO {
             while (resultSet.next()) {
                 int genreID = Integer.parseInt(resultSet.getString("GenreId"));
                 String genreName = resultSet.getString("Name");
+                int songsBoughtFromGenre = Integer.parseInt(resultSet.getString("SongsBoughtFromGenre"));
 
-                favoriteGenres.add(new CustomerGenre(genreID, genreName));
+                favoriteGenres.add(new CustomerGenre(genreID, genreName, songsBoughtFromGenre));
             }
         } catch (SQLException e) {
             e.printStackTrace();

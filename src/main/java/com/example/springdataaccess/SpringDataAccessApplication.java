@@ -14,6 +14,7 @@ import java.util.List;
 @SpringBootApplication
 public class SpringDataAccessApplication {
 
+    // TEMPORARY, ONLY FOR TESTING
     @RestController
     @RequestMapping("/api")
     public class ExampleRestController {
@@ -40,6 +41,7 @@ public class SpringDataAccessApplication {
 
     }
 
+    // TEMPORARY, ONLY FOR TESTING
     @Controller
     @RequestMapping("/")
     public class ExampleController {

@@ -40,4 +40,4 @@ Small note: If editing the README, please conform to the [standard-readme](https
 
 ## License
 
-MIT © 2022 Jørgen Saanum
+MIT © 2022 Jonas Bergkvist Melå, Jonas Kristoffersen, Jørgen Saanum

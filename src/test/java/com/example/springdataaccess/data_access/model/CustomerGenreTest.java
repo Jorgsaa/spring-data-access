@@ -27,7 +27,12 @@ class CustomerGenreTest {
     }
 
     @Test
-    void getFavoriteGenre() {
-        assertEquals(1, 1);
+    void getFavoriteGenre_ValidNoInput_ShouldReturnFavoriteGenre() {
+        String expectedResult = "Rock";
+        String actualResult;
+
+        actualResult = testCustomerGenre.getFavoriteGenre();
+
+        assertEquals(expectedResult, actualResult);
     }
 }

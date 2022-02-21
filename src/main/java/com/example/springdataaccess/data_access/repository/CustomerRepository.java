@@ -1,4 +1,4 @@
-package com.example.springdataaccess.repository;
+package com.example.springdataaccess.data_access.repository;
 
 import org.springframework.stereotype.Repository;
 

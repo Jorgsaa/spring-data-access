@@ -14,5 +14,12 @@ public class CustomerCountry {
         return numberOfCustomers;
     }
 
+    // Setters
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
 
+    public void setNumberOfCustomers(int numberOfCustomers) {
+        this.numberOfCustomers = numberOfCustomers;
+    }
 }

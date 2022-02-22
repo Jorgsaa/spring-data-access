@@ -9,4 +9,8 @@ public interface CustomerRepository {
 
     List<Customer> findAll();
 
+    Optional<Customer> findById(Integer id);
+
+    Optional<Customer> findByName(String name);
+
 }

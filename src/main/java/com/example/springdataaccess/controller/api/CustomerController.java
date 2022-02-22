@@ -2,10 +2,7 @@ package com.example.springdataaccess.controller.api;
 
 import com.example.springdataaccess.data_access.model.Customer;
 import com.example.springdataaccess.data_access.repository.CustomerRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,6 +30,21 @@ public class CustomerController {
     @GetMapping("name/{customerName}")
     public Optional<Customer> findByName(@PathVariable String customerName) {
         return customers.findByName(customerName);
+    }
+
+    @GetMapping("pagination")
+    public List<Customer> findByPage(@RequestParam Integer limit, @RequestParam Integer offset) {
+        return customers.findByPage(limit, offset);
+    }
+
+    @PostMapping
+    public Boolean save(@RequestBody Customer customer) {
+        return customers.save(customer);
+    }
+
+    @PatchMapping
+    public Boolean update(@RequestBody Customer customer) {
+        return customers.update(customer);
     }
 
 }

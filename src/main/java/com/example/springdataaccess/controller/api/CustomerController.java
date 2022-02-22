@@ -3,10 +3,12 @@ package com.example.springdataaccess.controller.api;
 import com.example.springdataaccess.data_access.model.Customer;
 import com.example.springdataaccess.data_access.repository.CustomerRepository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/customer")
@@ -19,7 +21,7 @@ public class CustomerController {
     }
 
     @GetMapping
-    public List<Customer> customers() {
+    public List<Customer> findAll() {
         return customers.findAll();
     }
 

@@ -26,6 +26,12 @@ class CustomerSpenderTest {
     }
 
     @Test
-    void getHighestSpending() {
+    void getHighestSpending_Void_ShouldReturnCorrectNumber() {
+        int expectedSpending = 10;
+        int actualSpending;
+
+        actualSpending = testCustomerSpender.getHighestSpending();
+
+        assertEquals(expectedSpending, actualSpending);
     }
 }

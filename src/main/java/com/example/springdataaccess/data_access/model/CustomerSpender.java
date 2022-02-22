@@ -4,6 +4,11 @@ public class CustomerSpender {
     private int customerId;
     private int highestSpending;
 
+    public CustomerSpender(int customerId, int highestSpending) {
+        setCustomerId(customerId);
+        setHighestSpending(highestSpending);
+    }
+
     // Getters
     public int getCustomerId() {
         return customerId;

@@ -12,6 +12,7 @@ class CustomerCountryTest {
 
     @BeforeEach
     void setUp() {
+        // Setters are tested when constructor is called
         testCustomerCountry = new CustomerCountry(originalCountryName, originalNumberOfCustomers);
     }
 

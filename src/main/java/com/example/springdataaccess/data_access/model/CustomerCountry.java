@@ -5,4 +5,14 @@ public class CustomerCountry {
     private int numberOfCustomers;
 
 
+    // Getters
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public int getNumberOfCustomers() {
+        return numberOfCustomers;
+    }
+
+
 }

@@ -25,4 +25,14 @@ public class CustomerController {
         return customers.findAll();
     }
 
+    @GetMapping("id/{customerId}")
+    public Optional<Customer> findById(@PathVariable Integer customerId) {
+        return customers.findById(customerId);
+    }
+
+    @GetMapping("name/{customerName}")
+    public Optional<Customer> findByName(@PathVariable String customerName) {
+        return customers.findByName(customerName);
+    }
+
 }

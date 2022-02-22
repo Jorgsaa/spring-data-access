@@ -16,7 +16,13 @@ class CustomerSpenderTest {
     }
 
     @Test
-    void getCustomerId() {
+    void getCustomerId_Void_ShouldReturnCorrectId() {
+        int expectedId = 1;
+        int actualId;
+
+        actualId = testCustomerSpender.getCustomerId();
+
+        assertEquals(expectedId, actualId);
     }
 
     @Test

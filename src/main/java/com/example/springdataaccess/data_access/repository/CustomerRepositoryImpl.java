@@ -49,4 +49,59 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         }
     }
 
+    @Override
+    public List<Customer> findByPage(Integer limit, Integer offset) {
+        return jdbcTemplate.query(
+                "SELECT * FROM Customer LIMIT ? OFFSET ?",
+                new BeanPropertyRowMapper<>(Customer.class),
+                limit,
+                offset
+        );
+    }
+
+    @Override
+    public Boolean save(Customer customer) {
+        int result = jdbcTemplate.update("""
+                            INSERT INTO Customer (CustomerId, FirstName, LastName, City, State, Country, PostalCode, Phone, Email) 
+                            VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?) 
+                        """,
+                customer.getFirstName(),
+                customer.getLastName(),
+                customer.getCity(),
+                customer.getState(),
+                customer.getCountry(),
+                customer.getPostalCode(),
+                customer.getPhone(),
+                customer.getEmail()
+        );
+        return result == 1;
+    }
+
+    @Override
+    public Boolean update(Customer customer) {
+        int result = jdbcTemplate.update("""
+                            UPDATE Customer
+                            SET FirstName = ?,
+                                LastName = ?,
+                                City = ?,
+                                State = ?,
+                                Country = ?,
+                                PostalCode = ?,
+                                Phone = ?,
+                                Email = ?
+                            WHERE CustomerId = ?
+                        """,
+                customer.getFirstName(),
+                customer.getLastName(),
+                customer.getCity(),
+                customer.getState(),
+                customer.getCountry(),
+                customer.getPostalCode(),
+                customer.getPhone(),
+                customer.getEmail(),
+                customer.getCustomerId()
+        );
+        return result == 1;
+    }
+
 }

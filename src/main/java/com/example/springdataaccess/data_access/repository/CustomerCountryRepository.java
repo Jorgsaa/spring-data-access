@@ -18,7 +18,6 @@ public class CustomerCountryRepository {
                 ORDER BY CustomerCount desc;
                 """;
 
-
         try (Connection conn =
                      DriverManager.getConnection(
                              SqliteConnectionHelper.getURL())) {

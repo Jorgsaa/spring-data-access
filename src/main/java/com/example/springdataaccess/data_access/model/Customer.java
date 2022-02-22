@@ -2,7 +2,7 @@ package com.example.springdataaccess.data_access.model;
 
 public class Customer {
 
-    private Integer id;
+    private Integer customerId;
     private String firstName;
     private String lastName;
     private String city;
@@ -16,7 +16,7 @@ public class Customer {
     }
 
     public Customer(Integer id, String firstName, String lastName, String company, String address, String city, String state, String country, String postalCode, String phone, String fax, String email, Integer supportRepId) {
-        this.id = id;
+        this.customerId = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
@@ -27,12 +27,12 @@ public class Customer {
         this.email = email;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public String getFirstName() {

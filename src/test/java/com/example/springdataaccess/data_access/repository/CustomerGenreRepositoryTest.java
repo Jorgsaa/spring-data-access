@@ -1,7 +1,7 @@
-package com.example.springdataaccess.data_access;
+package com.example.springdataaccess.data_access.repository;
 
-import com.example.springdataaccess.data_access.model.Customer;
 import com.example.springdataaccess.data_access.model.CustomerGenre;
+import com.example.springdataaccess.data_access.repository.CustomerGenreRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,12 +10,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CustomerGenreDAOTest {
-    CustomerGenreDAO testCustomerGenreDAO;
+class CustomerGenreRepositoryTest {
+    CustomerGenreRepository testCustomerGenreDAO;
 
     @BeforeEach
     void setUp() {
-        testCustomerGenreDAO = new CustomerGenreDAO();
+        testCustomerGenreDAO = new CustomerGenreRepository();
     }
 
     @Test

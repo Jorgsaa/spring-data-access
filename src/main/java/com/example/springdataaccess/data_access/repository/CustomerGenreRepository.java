@@ -1,4 +1,4 @@
-package com.example.springdataaccess.data_access;
+package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.CustomerGenre;
 import com.example.springdataaccess.data_access.util.SqliteConnectionHelper;
@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerGenreDAO {
+public class CustomerGenreRepository {
     public List<CustomerGenre> getFavoriteGenres(int customerID) {
         List<CustomerGenre> favoriteGenres = new ArrayList<>();
         String sql = """

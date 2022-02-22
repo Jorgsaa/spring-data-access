@@ -12,4 +12,13 @@ public class CustomerSpender {
     public int getHighestSpending() {
         return highestSpending;
     }
+
+    // Setters
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public void setHighestSpending(int highestSpending) {
+        this.highestSpending = highestSpending;
+    }
 }

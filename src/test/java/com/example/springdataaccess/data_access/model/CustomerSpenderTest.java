@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CustomerSpenderTest {
     CustomerSpender testCustomerSpender;
     int originalCustomerId = 1;
-    int originalHighestSpending = 1000000;
+    int originalHighestSpending = 10;
 
     @BeforeEach
     void setUp() {

@@ -17,7 +17,13 @@ class CustomerCountryTest {
     }
 
     @Test
-    void getCountryName() {
+    void getCountryName_Void_ShouldReturnCorrectString() {
+        String expectedResult = "Russia";
+        String actualResult;
+
+        actualResult = testCustomerCountry.getCountryName();
+
+        assertEquals(expectedResult, actualResult);
     }
 
     @Test

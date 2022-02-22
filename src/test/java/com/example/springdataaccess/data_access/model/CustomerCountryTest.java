@@ -27,6 +27,12 @@ class CustomerCountryTest {
     }
 
     @Test
-    void getNumberOfCustomers() {
+    void getNumberOfCustomers_Void_ShouldReturnCorrectNumber() {
+        int expectedResult = 10;
+        int actualResult;
+
+        actualResult = testCustomerCountry.getNumberOfCustomers();
+
+        assertEquals(expectedResult, actualResult);
     }
 }

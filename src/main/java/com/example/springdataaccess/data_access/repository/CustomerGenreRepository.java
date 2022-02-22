@@ -1,4 +1,4 @@
-package com.example.springdataaccess.data_access;
+package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.CustomerGenre;
 import com.example.springdataaccess.data_access.util.SqliteConnectionHelper;
@@ -7,8 +7,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerGenreDAO {
+public class CustomerGenreRepository {
     public List<CustomerGenre> getFavoriteGenres(int customerID) {
+        // Return the customers favorite genre (determined by how many songs the customer has bought having that genre).
+        // If there are multiple genres that have been bought the same number of times, then return them all (hence returning an array)
         List<CustomerGenre> favoriteGenres = new ArrayList<>();
         String sql = """
     SELECT Genre.GenreId, Genre.Name, count(*) AS 'SongsBoughtFromGenre'

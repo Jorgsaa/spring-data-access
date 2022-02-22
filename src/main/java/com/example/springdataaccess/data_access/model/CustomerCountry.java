@@ -4,7 +4,7 @@ public class CustomerCountry {
     private String countryName;
     private int numberOfCustomers;
 
-    CustomerCountry(String countryName, int numberOfCustomers) {
+    public CustomerCountry(String countryName, int numberOfCustomers) {
         setCountryName(countryName);
         setNumberOfCustomers(numberOfCustomers);
     }

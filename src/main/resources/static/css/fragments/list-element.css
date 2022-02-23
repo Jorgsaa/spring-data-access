@@ -1,15 +1,19 @@
-.list-element {
+li {
     list-style: none;
 }
 
-.artist-list-element {
+.artist-list-item {
     background-color: red;
 }
 
-.genre-list-element {
+.genre-list-item {
     background-color: blue;
 }
 
-.track-list-element {
+.track-list-item {
     background-color: green;
+}
+
+.search-results-list-item {
+    background-color: yellow;
 }

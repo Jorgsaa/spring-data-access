@@ -3,11 +3,11 @@
 <body>
   <div class="search-results-list-container" th:fragment="search-results-list">
     <ul>
-      <th:block th:each="searchResult : ${searchResults}">
-        <div th:replace="fragments/artist-list-element :: artist-list-element(${searchResult.artist})"></div>
-        <div th:replace="fragments/track-list-element :: track-list-element(${searchResult.track})"></div>
-        <div th:replace="fragments/genre-list-element :: genre-list-element(${searchResult.genre})"></div>
-      </th:block>
+      <li class="search-results-list-item" th:each="searchResult : ${searchResults}">
+        <div th:replace="fragments/artist-element :: artist-element(${searchResult.artist})"></div>
+        <div th:replace="fragments/track-element :: track-element(${searchResult.track})"></div>
+        <div th:replace="fragments/genre-element :: genre-element(${searchResult.genre})"></div>
+      </li>
     </ul>
   </div>
 </body>

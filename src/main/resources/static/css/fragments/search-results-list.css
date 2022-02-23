@@ -11,3 +11,9 @@
     grid-column: 1 / 4;
     overflow-y: scroll;
 }
+
+
+.search-results-list-container > ul {
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+}

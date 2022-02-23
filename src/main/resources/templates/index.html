@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:href="@{/css/fragments/search-box.css}">
 </head>
 <body>
     <div th:replace="fragments/header :: header"></div>
-    <div class="layout-content">
-        <div class="test-box">Centered div :D</div>
+    <div class="layout-content-center">
+        <div class="layout-content">
+            <div th:replace="fragments/search-box :: search-box"></div>
+        </div>
     </div>
 </body>
 </html>

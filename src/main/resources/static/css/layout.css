@@ -14,7 +14,7 @@ body {
     text-align: center;
 }
 
-.layout-content {
+.layout-content-center {
     display: flex;
     flex-direction: row;
 
@@ -22,8 +22,16 @@ body {
     align-items: center;
 }
 
-.test-box {
-    background-color: green;
-    width: 10vw;
-    height: 10vh;
+.layout-content {
+    background-color: aqua;
+    width: 50vw;
+    height: 50vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+
+    grid-gap: 10px;
+
+    justify-items: center;
 }

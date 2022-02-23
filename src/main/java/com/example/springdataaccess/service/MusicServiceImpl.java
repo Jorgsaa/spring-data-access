@@ -30,4 +30,13 @@ public class MusicServiceImpl implements MusicService {
         return musicData;
     }
 
+
+    public HashMap<String, List<?>> searchMusicData(String name) {
+        HashMap<String, List<?>> musicData = new HashMap<>();
+        musicData.put("artists", artists.findByName(name));
+        musicData.put("genres", genres.findByName(name));
+        musicData.put("tracks", tracks.findByName(name));
+        return musicData;
+    }
+
 }

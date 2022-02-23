@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-<li class="list-element track-list-element" th:fragment="track-list-element(track)">
+<div class="track-element-container" th:fragment="track-element(track)">
     <h2 th:text="${track.name}"></h2>
-</li>
+</div>
 </body>
 </html>

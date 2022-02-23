@@ -1,0 +1,15 @@
+.list-element {
+    list-style: none;
+}
+
+.artist-list-element {
+    background-color: red;
+}
+
+.genre-list-element {
+    background-color: blue;
+}
+
+.song-album-list-element {
+    background-color: green;
+}

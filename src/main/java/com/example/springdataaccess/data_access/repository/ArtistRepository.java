@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ArtistRepository {
 
-    List<Artist> findByName();
+    List<Artist> findByName(String name);
 
     List<Artist> findRandom(int amount);
 

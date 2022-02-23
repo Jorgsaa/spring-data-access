@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TrackRepository {
 
-    List<Track> findByName();
+    List<Track> findByName(String name);
 
     List<Track> findRandom(int amount);
 

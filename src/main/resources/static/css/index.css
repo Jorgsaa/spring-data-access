@@ -1,8 +1,0 @@
-body {
-    padding: 0;
-    margin: 0;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.9fr;
-}

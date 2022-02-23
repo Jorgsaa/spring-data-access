@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
 </head>
 <body>
     <div th:replace="fragments/header :: header"></div>
-    <h2>On the test Index page!</h2>
+    <div class="layout-content">
+        <div class="test-box">Centered div :D</div>
+    </div>
 </body>
 </html>

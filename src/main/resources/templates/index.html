@@ -6,15 +6,16 @@
     <link rel="stylesheet" th:href="@{/css/layout.css}">
     <link rel="stylesheet" th:href="@{/css/fragments/search-box.css}">
     <link rel="stylesheet" th:href="@{/css/fragments/small-list.css}">
+    <link rel="stylesheet" th:href="@{/css/fragments/list-element.css}">
 </head>
 <body>
     <div th:replace="fragments/header :: header"></div>
     <div class="layout-content-center">
         <div class="layout-content">
             <div th:replace="fragments/search-box :: search-box"></div>
-            <div th:replace="fragments/small-list :: small-list('artists')"></div>
-            <div th:replace="fragments/small-list :: small-list('songAlbums')"></div>
-            <div th:replace="fragments/small-list :: small-list('genres')"></div>
+            <div th:replace="fragments/small-list :: small-list('artists', 'Artists')"></div>
+            <div th:replace="fragments/small-list :: small-list('songAlbums', 'Songs')"></div>
+            <div th:replace="fragments/small-list :: small-list('genres', 'Genres')"></div>
         </div>
     </div>
 </body>

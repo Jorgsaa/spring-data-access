@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-    <div class="small-list-container" th:fragment="small-list(collection)">
-      <header>Header</header>
+    <div class="small-list-container" th:fragment="small-list(collection, headerText)">
+      <h2 th:text="${headerText}"></h2>
 
       <th:block th:switch="${collection}">
         <div th:case="'artists'" >

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<li class="song-album-list-element" th:fragment="song-album-list-element(songAlbum)">
+    <h1 th:text="${songAlbum.songTitle}"></h1>
+    <h1 th:text="${songAlbum.albumTitle}"></h1>
+</li>
+</body>
+</html>

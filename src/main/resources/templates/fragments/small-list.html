@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div class="small-list-container" th:fragment="small-list(collection)">
+      <header>Header</header>
+
+      <th:block th:switch="${collection}">
+        <div th:case="'artists'" >
+          <ul>
+            <th:block th:each="artist : ${__${collection}__}">
+              <div th:replace="fragments/artist-list-element :: artist-list-element(${artist})"></div>
+            </th:block>
+          </ul>
+        </div>
+        <div th:case="'songAlbums'" >
+          <ul>
+            <th:block th:each="songAlbum : ${__${collection}__}">
+              <div th:replace="fragments/song-album-list-element :: song-album-list-element(${songAlbum})"></div>
+            </th:block>
+          </ul>
+        </div>
+        <div th:case="'genres'" >
+          <ul>
+            <th:block th:each="genre : ${__${collection}__}">
+              <div th:replace="fragments/genre-list-element :: genre-list-element(${genre})"></div>
+            </th:block>
+          </ul>
+        </div>
+        <div th:case="*" >
+            Couldent find collection!
+        </div>
+      </th:block>
+  </div>
+</body>
+</html>

@@ -1,6 +1,8 @@
 package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.Artist;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -16,13 +18,29 @@ public class ArtistRepositoryImpl implements ArtistRepository{
     }
 
     @Override
-    public List<Artist> findByName() {
-        return null;
+    public List<Artist> findByName(String name) {
+        try {
+            return jdbcTemplate.query(
+                    "SELECT * FROM Artist WHERE Name LIKE ?",
+                    new BeanPropertyRowMapper<>(Artist.class),
+                    "%" + name + "%"
+            );
+        } catch (EmptyResultDataAccessException e) {
+            return List.of();
+        }
     }
 
     @Override
     public List<Artist> findRandom(int amount) {
-        return null;
+        try {
+            return jdbcTemplate.query(
+                    "SELECT * FROM Artist ORDER BY random() LIMIT ?",
+                    new BeanPropertyRowMapper<>(Artist.class),
+                    amount
+            );
+        } catch (EmptyResultDataAccessException e) {
+            return List.of();
+        }
     }
 
 }

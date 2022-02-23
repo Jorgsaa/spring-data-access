@@ -1,6 +1,8 @@
 package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.Genre;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -16,13 +18,29 @@ public class GenreRepositoryImpl implements GenreRepository{
     }
 
     @Override
-    public List<Genre> findByName() {
-        return null;
+    public List<Genre> findByName(String name) {
+        try {
+            return jdbcTemplate.query(
+                    "SELECT * FROM Genre WHERE Name LIKE ?",
+                    new BeanPropertyRowMapper<>(Genre.class),
+                    "%" + name + "%"
+            );
+        } catch (EmptyResultDataAccessException e) {
+            return List.of();
+        }
     }
 
     @Override
     public List<Genre> findRandom(int amount) {
-        return null;
+        try {
+            return jdbcTemplate.query(
+                    "SELECT * FROM Genre ORDER BY random() LIMIT ?",
+                    new BeanPropertyRowMapper<>(Genre.class),
+                    amount
+            );
+        } catch (EmptyResultDataAccessException e) {
+            return List.of();
+        }
     }
 
 }

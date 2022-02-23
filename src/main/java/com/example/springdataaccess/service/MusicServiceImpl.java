@@ -22,7 +22,7 @@ public class MusicServiceImpl implements MusicService {
     }
 
     @Override
-    public HashMap<String, List<?>> fetchMusicData(int amountEach) {
+    public HashMap<String, List<?>> fetchRandomMusicData(int amountEach) {
         HashMap<String, List<?>> musicData = new HashMap<>();
         musicData.put("artists", artists.findRandom(amountEach));
         musicData.put("genres", genres.findRandom(amountEach));

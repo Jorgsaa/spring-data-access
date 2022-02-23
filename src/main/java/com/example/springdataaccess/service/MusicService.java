@@ -5,6 +5,6 @@ import java.util.Map;
 
 public interface MusicService {
 
-    Map<String, List<?>> fetchMusicData(int amountEach);
+    Map<String, List<?>> fetchRandomMusicData(int amountEach);
 
 }

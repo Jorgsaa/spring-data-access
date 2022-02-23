@@ -19,7 +19,7 @@ public class IndexController {
     @GetMapping
     public String index(Model model) {
         // Fetch 5 of each type of data
-        musicService.fetchMusicData(5)
+        musicService.fetchRandomMusicData(5)
                 // Add each collection data as an attribute with the map key as name
                 .forEach(model::addAttribute);
         return "index";

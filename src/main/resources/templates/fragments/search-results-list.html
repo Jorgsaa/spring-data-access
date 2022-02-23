@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+  <div class="search-results-list-container" th:fragment="search-results-list">
+    <ul>
+      <th:block th:each="searchResult : ${searchResults}">
+        <div th:replace="fragments/artist-list-element :: artist-list-element(${searchResult.artist})"></div>
+        <div th:replace="fragments/track-list-element :: track-list-element(${searchResult.track})"></div>
+        <div th:replace="fragments/genre-list-element :: genre-list-element(${searchResult.genre})"></div>
+      </th:block>
+    </ul>
+  </div>
+</body>
+</html>

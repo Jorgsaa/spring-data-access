@@ -23,14 +23,21 @@ body {
 }
 
 .layout-content {
-    width: 50vw;
-    height: 50vh;
+    width: 75vw;
+    height: 75vh;
+    max-width: 75vw;
+    max-height: 75vh;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: auto 1fr;
 
     grid-gap: 10px;
 
     justify-items: center;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
 }

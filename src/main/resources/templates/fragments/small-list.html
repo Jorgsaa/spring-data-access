@@ -12,10 +12,10 @@
             </th:block>
           </ul>
         </div>
-        <div th:case="'songAlbums'" >
+        <div th:case="'tracks'" >
           <ul>
-            <th:block th:each="songAlbum : ${__${collection}__}">
-              <div th:replace="fragments/song-album-list-element :: song-album-list-element(${songAlbum})"></div>
+            <th:block th:each="track : ${__${collection}__}">
+              <div th:replace="fragments/track-list-element :: track-list-element(${track})"></div>
             </th:block>
           </ul>
         </div>

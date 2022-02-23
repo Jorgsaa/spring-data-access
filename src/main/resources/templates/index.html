@@ -14,25 +14,9 @@
         <div class="layout-content">
             <div th:replace="fragments/search-box :: search-box"></div>
             <div th:replace="fragments/small-list :: small-list('artists', 'Artists')"></div>
-            <div th:replace="fragments/small-list :: small-list('songAlbums', 'Songs')"></div>
+            <div th:replace="fragments/small-list :: small-list('tracks', 'Tracks')"></div>
             <div th:replace="fragments/small-list :: small-list('genres', 'Genres')"></div>
         </div>
     </div>
-<!-- TODO: vvv REMOVE, TEMPORARY vvv -->
-    <div>
-        <h4>Artists</h4>
-        <ul>
-            <li th:each="artist: ${artists}" th:text="${artist.name}" />
-        </ul>
-        <h4>Genres</h4>
-        <ul>
-            <li th:each="genre: ${genres}" th:text="${genre.name}" />
-        </ul>
-        <h4>Tracks</h4>
-        <ul>
-            <li th:each="track: ${tracks}" th:text="${track.name}" />
-        </ul>
-    </div>
-    <!-- ^^^ TODO: REMOVE, TEMPORARY ^^^ -->
 </body>
 </html>

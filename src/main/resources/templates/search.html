@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Search</title>
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:href="@{/css/fragments/search-box.css}">
+    <link rel="stylesheet" th:href="@{/css/fragments/list-element.css}">
 </head>
 <body>
-    <h1>Searched for </h1>
-    <h1 th:text="${searchTerm}"></h1>
+<div th:replace="fragments/header :: header"></div>
+<div class="layout-content-center">
+    <div class="layout-content">
+        <div th:replace="fragments/search-box :: search-box"></div>
+    </div>
+</div>
 </body>
 </html>

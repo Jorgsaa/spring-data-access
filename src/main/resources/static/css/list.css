@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-
 }
 
 li {
@@ -26,6 +25,10 @@ li {
     justify-items: center;
 }
 
+.small-list-container > ul > li > div > h3 {
+    text-align: center;
+}
+
 .search-results-list-container {
     box-sizing: border-box;
 
@@ -38,4 +41,8 @@ li {
 
     grid-column: 1 / 4;
     overflow-y: scroll;
+}
+
+.search-result-element-container > * {
+    display: inline-block;
 }

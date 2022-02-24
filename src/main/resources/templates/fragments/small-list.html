@@ -8,21 +8,21 @@
         <th:block th:case="'artists'" >
           <ul>
             <li th:each="artist : ${__${collection}__}">
-              <div th:replace="fragments/artist-element :: artist-element(${artist})"></div>
+              <div th:replace="fragments/artist-element :: artist-element(${artist.name})"></div>
             </li>
           </ul>
         </th:block>
         <th:block th:case="'tracks'" >
           <ul>
             <li th:each="track : ${__${collection}__}">
-              <div th:replace="fragments/track-element :: track-element(${track})"></div>
+              <div th:replace="fragments/track-element :: track-element(${track.name})"></div>
             </li>
           </ul>
         </th:block>
         <th:block th:case="'genres'" >
           <ul>
             <li th:each="genre : ${__${collection}__}">
-              <div th:replace="fragments/genre-element :: genre-element(${genre})"></div>
+              <div th:replace="fragments/genre-element :: genre-element(${genre.name})"></div>
             </li>
           </ul>
         </th:block>

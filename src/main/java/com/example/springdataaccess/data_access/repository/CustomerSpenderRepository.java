@@ -1,6 +1,5 @@
 package com.example.springdataaccess.data_access.repository;
 
-import com.example.springdataaccess.data_access.model.CustomerGenre;
 import com.example.springdataaccess.data_access.model.CustomerSpender;
 import com.example.springdataaccess.data_access.util.SqliteConnectionHelper;
 

@@ -2,12 +2,15 @@ package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.CustomerSpender;
 import com.example.springdataaccess.data_access.util.SqliteConnectionHelper;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 
+@Repository
 public class CustomerSpenderRepositoryImpl implements CustomerSpenderRepository {
 
+    @Override
     public ArrayList<CustomerSpender> getHighestSpenders () {
         // Return the highest spending of each customer (descending/highest invoice first)
         ArrayList<CustomerSpender> highestSpenders = new ArrayList<>();

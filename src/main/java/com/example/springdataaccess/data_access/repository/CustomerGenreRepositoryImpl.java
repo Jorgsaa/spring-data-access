@@ -39,7 +39,7 @@ public class CustomerGenreRepositoryImpl implements CustomerGenreRepository {
                 ON Track.TrackId = InvoiceLine.TrackId
             INNER JOIN Genre
                 ON Genre.GenreId = Track.GenreId
-        WHERE Customer.CustomerId = 57
+        WHERE Customer.CustomerId = ?
         GROUP BY Genre.Name
         ORDER BY SongsBoughtFromGenre desc LIMIT 1);
 """;
@@ -49,6 +49,7 @@ public class CustomerGenreRepositoryImpl implements CustomerGenreRepository {
                              SqliteConnectionHelper.getURL())) {
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setInt(1, customerID);
+            preparedStatement.setInt(2, customerID);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 

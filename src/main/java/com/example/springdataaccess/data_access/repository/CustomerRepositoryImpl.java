@@ -61,46 +61,33 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public Boolean save(Customer customer) {
-        int result = jdbcTemplate.update("""
-                            INSERT INTO Customer (CustomerId, FirstName, LastName, City, State, Country, PostalCode, Phone, Email) 
-                            VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?) 
-                        """,
-                customer.getFirstName(),
-                customer.getLastName(),
-                customer.getCity(),
-                customer.getState(),
-                customer.getCountry(),
-                customer.getPostalCode(),
-                customer.getPhone(),
-                customer.getEmail()
-        );
+        int result = 0;
+        try {
+            result = jdbcTemplate.update("""
+                        INSERT INTO Customer (CustomerId, FirstName, LastName, City, State, Country, PostalCode, Phone, Email) 
+                        VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?) 
+                    """, customer.getFirstName(), customer.getLastName(), customer.getCity(), customer.getState(), customer.getCountry(), customer.getPostalCode(), customer.getPhone(), customer.getEmail());
+        } catch (UncategorizedSQLException ignored) {}
         return result == 1;
     }
 
     @Override
     public Boolean update(Customer customer) {
-        int result = jdbcTemplate.update("""
-                            UPDATE Customer
-                            SET FirstName = ?,
-                                LastName = ?,
-                                City = ?,
-                                State = ?,
-                                Country = ?,
-                                PostalCode = ?,
-                                Phone = ?,
-                                Email = ?
-                            WHERE CustomerId = ?
-                        """,
-                customer.getFirstName(),
-                customer.getLastName(),
-                customer.getCity(),
-                customer.getState(),
-                customer.getCountry(),
-                customer.getPostalCode(),
-                customer.getPhone(),
-                customer.getEmail(),
-                customer.getCustomerId()
-        );
+        int result = 0;
+        try {
+            result = jdbcTemplate.update("""
+                        UPDATE Customer
+                        SET FirstName = ?,
+                            LastName = ?,
+                            City = ?,
+                            State = ?,
+                            Country = ?,
+                            PostalCode = ?,
+                            Phone = ?,
+                            Email = ?
+                        WHERE CustomerId = ?
+                    """, customer.getFirstName(), customer.getLastName(), customer.getCity(), customer.getState(), customer.getCountry(), customer.getPostalCode(), customer.getPhone(), customer.getEmail(), customer.getCustomerId());
+        } catch (UncategorizedSQLException ignored) {}
         return result == 1;
     }
 

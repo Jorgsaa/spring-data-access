@@ -2,10 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 <div class="search-result-element-container" th:fragment="search-result-element(searchResult)">
-    <h3 th:text="${searchResult.trackName}"></h3>
-    <h3 th:text="${searchResult.albumName}"></h3>
-    <h3 th:text="${searchResult.artistName}"></h3>
-    <h3 th:text="${searchResult.genreName}"></h3>
+    <div th:replace="fragments/track-element :: track-element(${searchResult.trackName})"></div>
+    <span> - </span>
+    <div th:replace="fragments/artist-element :: artist-element(${searchResult.artistName})"></div>
+    <span> : </span>
+    <div th:replace="fragments/genre-element :: genre-element(${searchResult.genreName})"></div>
 </div>
 </body>
 </html>

@@ -6,9 +6,9 @@ import com.example.springdataaccess.data_access.util.SqliteConnectionHelper;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class CustomerSpenderRepositoryImpl {
+public class CustomerSpenderRepositoryImpl implements CustomerSpenderRepository {
 
-    public ArrayList<CustomerSpender> getHighestSpenders() {
+    public ArrayList<CustomerSpender> getHighestSpenders () {
         // Return the highest spending of each customer (descending/highest invoice first)
         ArrayList<CustomerSpender> highestSpenders = new ArrayList<>();
         String sql = """

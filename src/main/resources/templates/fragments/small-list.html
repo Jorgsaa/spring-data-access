@@ -5,30 +5,30 @@
       <h2 th:text="${headerText}"></h2>
 
       <th:block th:switch="${collection}">
-        <div th:case="'artists'" >
+        <th:block th:case="'artists'" >
           <ul>
-            <th:block th:each="artist : ${__${collection}__}">
-              <div th:replace="fragments/artist-list-element :: artist-list-element(${artist})"></div>
-            </th:block>
+            <li class="artist-list-item" th:each="artist : ${__${collection}__}">
+              <div th:replace="fragments/artist-element :: artist-element(${artist})"></div>
+            </li>
           </ul>
-        </div>
-        <div th:case="'tracks'" >
+        </th:block>
+        <th:block th:case="'tracks'" >
           <ul>
-            <th:block th:each="track : ${__${collection}__}">
-              <div th:replace="fragments/track-list-element :: track-list-element(${track})"></div>
-            </th:block>
+            <li class="track-list-item" th:each="track : ${__${collection}__}">
+              <div th:replace="fragments/track-element :: track-element(${track})"></div>
+            </li>
           </ul>
-        </div>
-        <div th:case="'genres'" >
+        </th:block>
+        <th:block th:case="'genres'" >
           <ul>
-            <th:block th:each="genre : ${__${collection}__}">
-              <div th:replace="fragments/genre-list-element :: genre-list-element(${genre})"></div>
-            </th:block>
+            <li class="genre-list-item" th:each="genre : ${__${collection}__}">
+              <div th:replace="fragments/genre-element :: genre-element(${genre})"></div>
+            </li>
           </ul>
-        </div>
-        <div th:case="*" >
+        </th:block>
+        <th:block th:case="*" >
             Couldent find collection!
-        </div>
+        </th:block>
       </th:block>
   </div>
 </body>

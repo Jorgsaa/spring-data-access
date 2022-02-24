@@ -2,6 +2,7 @@ package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.Customer;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.UncategorizedSQLException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -36,7 +37,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public Optional<Customer> findByName(String name) {
         try {
-            return Optional.ofNullable(jdbcTemplate.queryForObject("SELECT * FROM Customer WHERE Customer.FirstName || ' ' || Customer.LastName LIKE ?", new BeanPropertyRowMapper<>(Customer.class), "%" + name + "%"));
+            return Optional.ofNullable(jdbcTemplate.queryForObject("SELECT * FROM Customer WHERE Customer.FirstName || ' ' || Customer.LastName LIKE ? LIMIT 1", new BeanPropertyRowMapper<>(Customer.class), "%" + name + "%"));
         } catch (EmptyResultDataAccessException e) {
             return Optional.empty();
         }

@@ -13,7 +13,6 @@
 <div class="layout-content-center">
     <div class="layout-content">
         <div th:replace="fragments/search-box :: search-box"></div>
-        <h1 th:text="${searchResults.size()} + ' results found'"></h1>
         <div th:replace="fragments/search-results-list :: search-results-list"></div>
     </div>
 </div>

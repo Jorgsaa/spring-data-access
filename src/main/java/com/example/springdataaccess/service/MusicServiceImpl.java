@@ -1,5 +1,6 @@
 package com.example.springdataaccess.service;
 
+import com.example.springdataaccess.data_access.model.TrackArtistAlbum;
 import com.example.springdataaccess.data_access.repository.ArtistRepository;
 import com.example.springdataaccess.data_access.repository.GenreRepository;
 import com.example.springdataaccess.data_access.repository.TrackRepository;
@@ -31,12 +32,8 @@ public class MusicServiceImpl implements MusicService {
     }
 
 
-    public HashMap<String, List<?>> searchMusicData(String name) {
-        HashMap<String, List<?>> musicData = new HashMap<>();
-        musicData.put("artists", artists.findByName(name));
-        musicData.put("genres", genres.findByName(name));
-        musicData.put("tracks", tracks.findByName(name));
-        return musicData;
+    public List<TrackArtistAlbum> searchMusicData(String searchTerm) {
+        return tracks.findDetailsByName(searchTerm);
     }
 
 }

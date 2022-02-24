@@ -40,7 +40,7 @@ gradle bootRun
 
 ### Build & Run Docker container
 ```
-docker build --build-arg JAR_FILE=build/libs/\*.jar -t jorgsaa/spring-data-access --no-cache .
+docker build -t jorgsaa/spring-data-access .
 docker run -p 8080:8080 jorgsaa/spring-data-access
 ```
 

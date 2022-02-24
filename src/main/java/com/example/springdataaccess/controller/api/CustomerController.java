@@ -3,7 +3,7 @@ package com.example.springdataaccess.controller.api;
 import com.example.springdataaccess.data_access.model.Customer;
 import com.example.springdataaccess.data_access.model.CustomerGenre;
 import com.example.springdataaccess.data_access.repository.customer_genre.CustomerGenreRepository;
-import com.example.springdataaccess.data_access.repository.CustomerRepository;
+import com.example.springdataaccess.data_access.repository.customer.CustomerRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -6,8 +6,8 @@ import com.example.springdataaccess.data_access.util.SqliteConnectionHelper;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class CustomerCountryRepositoryImpl {
-    public ArrayList<CustomerCountry> getCustomersInEachCountry() {
+public class CustomerCountryRepositoryImpl implements CustomerCountryRepository<CustomerCountry> {
+    public ArrayList<CustomerCountry> findAll() {
         // Return a list of all countries with their corresponding number of customers
         // (descending by number of customers in each country)
         ArrayList<CustomerCountry> customersInEachCountry = new ArrayList<>();

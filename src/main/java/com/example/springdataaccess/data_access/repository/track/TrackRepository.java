@@ -1,4 +1,4 @@
-package com.example.springdataaccess.data_access.repository;
+package com.example.springdataaccess.data_access.repository.track;
 
 import com.example.springdataaccess.data_access.model.Track;
 import com.example.springdataaccess.data_access.model.TrackSearchResult;

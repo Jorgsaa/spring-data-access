@@ -18,19 +18,6 @@ public class ArtistRepositoryImpl implements ArtistRepository{
     }
 
     @Override
-    public List<Artist> findByName(String name) {
-        try {
-            return jdbcTemplate.query(
-                    "SELECT * FROM Artist WHERE Name LIKE ?",
-                    new BeanPropertyRowMapper<>(Artist.class),
-                    "%" + name + "%"
-            );
-        } catch (EmptyResultDataAccessException e) {
-            return List.of();
-        }
-    }
-
-    @Override
     public List<Artist> findRandom(int amount) {
         try {
             return jdbcTemplate.query(

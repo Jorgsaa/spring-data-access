@@ -2,9 +2,9 @@ package com.example.springdataaccess.data_access.model;
 
 public class CustomerSpender {
     private int customerId;
-    private int highestSpending;
+    private double highestSpending;
 
-    public CustomerSpender(int customerId, int highestSpending) {
+    public CustomerSpender(int customerId, double highestSpending) {
         setCustomerId(customerId);
         setHighestSpending(highestSpending);
     }
@@ -14,7 +14,7 @@ public class CustomerSpender {
         return customerId;
     }
 
-    public int getHighestSpending() {
+    public double getHighestSpending() {
         return highestSpending;
     }
 
@@ -23,7 +23,7 @@ public class CustomerSpender {
         this.customerId = customerId;
     }
 
-    public void setHighestSpending(int highestSpending) {
+    public void setHighestSpending(double highestSpending) {
         this.highestSpending = highestSpending;
     }
 }

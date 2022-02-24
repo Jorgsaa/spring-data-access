@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CustomerSpenderTest {
     CustomerSpender testCustomerSpender;
     int originalCustomerId = 1;
-    int originalHighestSpending = 10;
+    double originalHighestSpending = 10.0;
 
     @BeforeEach
     void setUp() {
@@ -27,8 +27,8 @@ class CustomerSpenderTest {
 
     @Test
     void getHighestSpending_Void_ShouldReturnCorrectNumber() {
-        int expectedSpending = 10;
-        int actualSpending;
+        double expectedSpending = 10;
+        double actualSpending;
 
         actualSpending = testCustomerSpender.getHighestSpending();
 

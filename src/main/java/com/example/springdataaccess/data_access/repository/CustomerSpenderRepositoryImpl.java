@@ -32,7 +32,7 @@ public class CustomerSpenderRepositoryImpl implements CustomerSpenderRepository 
 
             while (resultSet.next()) {
                 int customerId = Integer.parseInt(resultSet.getString("CustomerId"));
-                int highestSpending = Integer.parseInt(resultSet.getString("HighestSpending"));
+                double highestSpending = Double.parseDouble(resultSet.getString("HighestSpending"));
 
                 highestSpenders.add(new CustomerSpender(customerId, highestSpending));
             }

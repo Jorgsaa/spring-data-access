@@ -2,11 +2,11 @@ package com.example.springdataaccess.data_access.model;
 
 public class CustomerSpender {
     private int customerId;
-    private int highestSpending;
+    private double totalSpending;
 
-    public CustomerSpender(int customerId, int highestSpending) {
+    public CustomerSpender(int customerId, double totalSpending) {
         setCustomerId(customerId);
-        setHighestSpending(highestSpending);
+        setTotalSpending(totalSpending);
     }
 
     // Getters
@@ -14,8 +14,8 @@ public class CustomerSpender {
         return customerId;
     }
 
-    public int getHighestSpending() {
-        return highestSpending;
+    public double getTotalSpending() {
+        return totalSpending;
     }
 
     // Setters
@@ -23,7 +23,7 @@ public class CustomerSpender {
         this.customerId = customerId;
     }
 
-    public void setHighestSpending(int highestSpending) {
-        this.highestSpending = highestSpending;
+    public void setTotalSpending(double highestSpending) {
+        this.totalSpending = highestSpending;
     }
 }

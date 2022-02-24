@@ -1,12 +1,14 @@
 package com.example.springdataaccess.controller.api;
 
 import com.example.springdataaccess.data_access.model.Customer;
+import com.example.springdataaccess.data_access.model.CustomerGenre;
 import com.example.springdataaccess.data_access.repository.CustomerGenreRepository;
 import com.example.springdataaccess.data_access.repository.CustomerRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +34,13 @@ public class CustomerController {
     public ResponseEntity<Customer> findById(@PathVariable Integer customerId) {
         Optional<Customer> customer = customers.findById(customerId);
         return ResponseEntity.of(customer);
+    }
+
+    @GetMapping("id/{customerId}/popular-genre")
+    public ArrayList<CustomerGenre> getFavoriteGenres(
+            @PathVariable Integer customerId
+    ) {
+        return customerGenre.getFavoriteGenres(customerId);
     }
 
     @GetMapping("name/{customerName}")

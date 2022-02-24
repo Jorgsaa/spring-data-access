@@ -21,19 +21,24 @@ Web-facing application built using:
 
 ```
 git clone https://github.com/Jorgsaa/spring-data-access.git
+cd spring-data-access
 ```
 
 ## Usage
 
 ### Gradle
+
+#### Windows
 ```
-cd spring-data-access
 .\gradlew bootRun
+```
+#### Linux
+```
+gradle bootRun
 ```
 
 ### Build & Run Docker container
 ```
-cd spring-data-access
 docker build --build-arg JAR_FILE=build/libs/\*.jar -t jorgsaa/spring-data-access --no-cache .
 docker run -p 8080:8080 jorgsaa/spring-data-access
 ```

@@ -22,8 +22,17 @@ git clone https://github.com/Jorgsaa/spring-data-access.git
 
 ## Usage
 
+### Gradle
 ```
+cd spring-data-access
 .\gradlew bootRun
+```
+
+### Build & Run Docker container
+```
+cd spring-data-access
+docker build --build-arg JAR_FILE=build/libs/\*.jar -t jorgsaa/spring-data-access --no-cache .
+docker run -p 8080:8080 jorgsaa/spring-data-access
 ```
 
 ## Maintainers

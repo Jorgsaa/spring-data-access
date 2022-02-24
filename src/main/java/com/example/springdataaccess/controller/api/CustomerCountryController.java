@@ -1,7 +1,7 @@
 package com.example.springdataaccess.controller.api;
 
 import com.example.springdataaccess.data_access.model.CustomerCountry;
-import com.example.springdataaccess.data_access.repository.CustomerCountryRepository;
+import com.example.springdataaccess.data_access.repository.customer_country.CustomerCountryRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.example.springdataaccess.data_access.repository;
+package com.example.springdataaccess.data_access.repository.customer_country;
 
 import com.example.springdataaccess.data_access.model.CustomerCountry;
 import com.example.springdataaccess.data_access.util.SqliteConnectionHelper;

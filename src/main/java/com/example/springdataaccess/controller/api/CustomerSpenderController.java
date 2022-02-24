@@ -1,7 +1,7 @@
 package com.example.springdataaccess.controller.api;
 
 import com.example.springdataaccess.data_access.model.CustomerSpender;
-import com.example.springdataaccess.data_access.repository.CustomerSpenderRepository;
+import com.example.springdataaccess.data_access.repository.customer_spender.CustomerSpenderRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

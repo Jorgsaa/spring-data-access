@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-<div class="search-result-element-container" th:fragment="search-result-element(searchResult)">
-    <h3 th:text="${searchResult.trackName}"></h3>
-    <h3 th:text="${searchResult.albumName}"></h3>
-    <h3 th:text="${searchResult.artistName}"></h3>
-    <h3 th:text="${searchResult.genreName}"></h3>
-</div>
+<tr class="search-result-element-container" th:fragment="search-result-element(searchResult)">
+    <td>
+        <h3 th:text="${searchResult.trackName}"></h3>
+    </td>
+    <td>
+        <h3 th:text="${searchResult.albumName}"></h3>
+    </td>
+    <td>
+        <h3 th:text="${searchResult.artistName}"></h3>
+    </td>
+    <td>
+        <h3 th:text="${searchResult.genreName}"></h3>
+    </td>
+</tr>
 </body>
 </html>

@@ -1,0 +1,30 @@
+.small-list-container > ul {
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+li {
+    background-color: darkgrey;
+}
+
+.small-list-container {
+    background-color: dimgray;
+
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.small-list-container > ul > li > div > h3 {
+    text-align: center;
+}

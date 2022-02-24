@@ -2,11 +2,15 @@ package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.CustomerCountry;
 import com.example.springdataaccess.data_access.util.SqliteConnectionHelper;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class CustomerCountryRepositoryImpl implements CustomerCountryRepository<CustomerCountry> {
+@Repository
+public class CustomerCountryRepositoryImpl implements CustomerCountryRepository {
+
+    @Override
     public ArrayList<CustomerCountry> findAll() {
         // Return a list of all countries with their corresponding number of customers
         // (descending by number of customers in each country)

@@ -1,6 +1,6 @@
 package com.example.springdataaccess.service;
 
-import com.example.springdataaccess.data_access.model.TrackArtistAlbumGenre;
+import com.example.springdataaccess.data_access.model.TrackSearchResult;
 import com.example.springdataaccess.data_access.repository.ArtistRepository;
 import com.example.springdataaccess.data_access.repository.GenreRepository;
 import com.example.springdataaccess.data_access.repository.TrackRepository;
@@ -32,7 +32,7 @@ public class MusicServiceImpl implements MusicService {
     }
 
 
-    public List<TrackArtistAlbumGenre> searchMusicData(String searchTerm) {
+    public List<TrackSearchResult> searchMusicData(String searchTerm) {
         return tracks.findDetailsByName(searchTerm);
     }
 

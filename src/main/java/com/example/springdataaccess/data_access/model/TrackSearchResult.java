@@ -1,15 +1,15 @@
 package com.example.springdataaccess.data_access.model;
 
-public class TrackArtistAlbumGenre {
+public class TrackSearchResult {
     private String trackName;
     private String artistName;
     private String albumName;
     private String genreName;
 
-    public TrackArtistAlbumGenre() {
+    public TrackSearchResult() {
     }
 
-    public TrackArtistAlbumGenre(String trackName, String artistName, String albumName, String genreName) {
+    public TrackSearchResult(String trackName, String artistName, String albumName, String genreName) {
         this.trackName = trackName;
         this.artistName = artistName;
         this.albumName = albumName;

@@ -1,7 +1,7 @@
 package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.Track;
-import com.example.springdataaccess.data_access.model.TrackArtistAlbumGenre;
+import com.example.springdataaccess.data_access.model.TrackSearchResult;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,7 +19,7 @@ public class TrackRepositoryImpl implements TrackRepository {
     }
 
     @Override
-    public List<TrackArtistAlbumGenre> findDetailsByName(String searchTerm) {
+    public List<TrackSearchResult> findDetailsByName(String searchTerm) {
         try {
             return jdbcTemplate.query("""
                         SELECT
@@ -32,7 +32,7 @@ public class TrackRepositoryImpl implements TrackRepository {
                         INNER JOIN Genre genre on genre.GenreId = Track.GenreId
                         INNER JOIN Artist artist on artist.ArtistId = album.ArtistId
                         WHERE Track.Name LIKE ?
-                    """, new BeanPropertyRowMapper<>(TrackArtistAlbumGenre.class), "%" + searchTerm + "%");
+                    """, new BeanPropertyRowMapper<>(TrackSearchResult.class), "%" + searchTerm + "%");
         } catch (EmptyResultDataAccessException e) {
             return List.of();
         }

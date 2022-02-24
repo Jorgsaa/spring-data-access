@@ -8,6 +8,7 @@ Web-facing application built using:
 - Gradle
 - SQLite JDBC
 - Docker
+- Swagger
 
 ## Table of Contents
 

@@ -1,4 +1,4 @@
-package com.example.springdataaccess.data_access.repository;
+package com.example.springdataaccess.data_access.repository.artist;
 
 import com.example.springdataaccess.data_access.model.Artist;
 

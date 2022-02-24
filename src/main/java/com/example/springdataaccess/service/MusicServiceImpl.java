@@ -1,9 +1,9 @@
 package com.example.springdataaccess.service;
 
 import com.example.springdataaccess.data_access.model.TrackSearchResult;
-import com.example.springdataaccess.data_access.repository.ArtistRepository;
-import com.example.springdataaccess.data_access.repository.GenreRepository;
-import com.example.springdataaccess.data_access.repository.TrackRepository;
+import com.example.springdataaccess.data_access.repository.artist.ArtistRepository;
+import com.example.springdataaccess.data_access.repository.genre.GenreRepository;
+import com.example.springdataaccess.data_access.repository.track.TrackRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

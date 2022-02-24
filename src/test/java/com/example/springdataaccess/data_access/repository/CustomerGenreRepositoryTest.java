@@ -1,6 +1,7 @@
 package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.CustomerGenre;
+import com.example.springdataaccess.data_access.repository.customer_genre.CustomerGenreRepositoryImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

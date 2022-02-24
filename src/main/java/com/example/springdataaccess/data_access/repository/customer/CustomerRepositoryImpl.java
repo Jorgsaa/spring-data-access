@@ -1,8 +1,7 @@
-package com.example.springdataaccess.data_access.repository;
+package com.example.springdataaccess.data_access.repository.customer;
 
 import com.example.springdataaccess.data_access.model.Customer;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.UncategorizedSQLException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -53,8 +52,8 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         int result = 0;
         try {
             result = jdbcTemplate.update("""
-                        INSERT INTO Customer (CustomerId, FirstName, LastName, City, State, Country, PostalCode, Phone, Email) 
-                        VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?) 
+                        INSERT INTO Customer (CustomerId, FirstName, LastName, City, State, Country, PostalCode, Phone, Email)
+                        VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)
                     """, customer.getFirstName(), customer.getLastName(), customer.getCity(), customer.getState(), customer.getCountry(), customer.getPostalCode(), customer.getPhone(), customer.getEmail());
         } catch (UncategorizedSQLException ignored) {}
         return result == 1;

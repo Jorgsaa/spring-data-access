@@ -1,7 +1,7 @@
 package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.Track;
-import com.example.springdataaccess.data_access.model.TrackArtistAlbum;
+import com.example.springdataaccess.data_access.model.TrackArtistAlbumGenre;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,20 +19,20 @@ public class TrackRepositoryImpl implements TrackRepository {
     }
 
     @Override
-    public List<TrackArtistAlbum> findDetailsByName(String searchTerm) {
+    public List<TrackArtistAlbumGenre> findDetailsByName(String searchTerm) {
         try {
             return jdbcTemplate.query("""
-                                SELECT
-                                       Track.Name AS TrackName,
-                                        album.Title AS AlbumName,
-                                        artist.Name AS ArtistName
-                                FROM Track
-                                INNER JOIN Album album on album.AlbumId = Track.AlbumId
-                                INNER JOIN Artist artist on artist.ArtistId = album.ArtistId
-                                WHERE Track.Name LIKE ?
-                            """,
-                    new BeanPropertyRowMapper<>(TrackArtistAlbum.class),
-                    "%" + searchTerm + "%");
+                        SELECT
+                                Track.Name AS TrackName,
+                                album.Title AS AlbumName,
+                                artist.Name AS ArtistName,
+                                genre.Name as GenreName
+                        FROM Track
+                        INNER JOIN Album album on album.AlbumId = Track.AlbumId
+                        INNER JOIN Genre genre on genre.GenreId = Track.GenreId
+                        INNER JOIN Artist artist on artist.ArtistId = album.ArtistId
+                        WHERE Track.Name LIKE ?
+                    """, new BeanPropertyRowMapper<>(TrackArtistAlbumGenre.class), "%" + searchTerm + "%");
         } catch (EmptyResultDataAccessException e) {
             return List.of();
         }

@@ -1,14 +1,15 @@
 package com.example.springdataaccess.data_access.model;
 
-public class TrackArtistAlbum {
+public class TrackArtistAlbumGenre {
     private String trackName;
     private String artistName;
     private String albumName;
+    private String genreName;
 
-    public TrackArtistAlbum() {
+    public TrackArtistAlbumGenre() {
     }
 
-    public TrackArtistAlbum(String trackName, String artistName, String albumName) {
+    public TrackArtistAlbumGenre(String trackName, String artistName, String albumName, String genreName) {
         this.trackName = trackName;
         this.artistName = artistName;
         this.albumName = albumName;
@@ -36,6 +37,14 @@ public class TrackArtistAlbum {
 
     public void setAlbumName(String albumName) {
         this.albumName = albumName;
+    }
+
+    public String getGenreName() {
+        return genreName;
+    }
+
+    public void setGenreName(String genreName) {
+        this.genreName = genreName;
     }
 
 }

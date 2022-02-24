@@ -37,7 +37,7 @@ public class CustomerController {
     }
 
     @GetMapping("id/{customerId}/popular-genre")
-    public ArrayList<CustomerGenre> getFavoriteGenres(
+    public ArrayList<CustomerGenre> findFavoriteGenres(
             @PathVariable Integer customerId
     ) {
         return customerGenre.getFavoriteGenres(customerId);

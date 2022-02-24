@@ -12,15 +12,15 @@ public class CustomerSpenderRepositoryImpl implements CustomerSpenderRepository 
 
     @Override
     public ArrayList<CustomerSpender> getHighestSpenders () {
-        // Return the highest spending of each customer (descending/highest invoice first)
+        // Return the total spending of each customer (descending)
         ArrayList<CustomerSpender> highestSpenders = new ArrayList<>();
         String sql = """
-                SELECT Customer.CustomerId, max(Total) AS HighestSpending
+                SELECT Customer.CustomerId, ROUND(SUM(Total), 2) AS TotalSpending
                 FROM Customer
                     INNER JOIN Invoice
                         ON Customer.CustomerId = Invoice.CustomerId
                 GROUP BY Customer.CustomerId, FirstName
-                ORDER BY HighestSpending desc;
+                ORDER BY TotalSpending desc;
                 """;
 
         try (Connection conn =
@@ -32,9 +32,9 @@ public class CustomerSpenderRepositoryImpl implements CustomerSpenderRepository 
 
             while (resultSet.next()) {
                 int customerId = Integer.parseInt(resultSet.getString("CustomerId"));
-                double highestSpending = Double.parseDouble(resultSet.getString("HighestSpending"));
+                double totalSpending = Double.parseDouble(resultSet.getString("TotalSpending"));
 
-                highestSpenders.add(new CustomerSpender(customerId, highestSpending));
+                highestSpenders.add(new CustomerSpender(customerId, totalSpending));
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -8,11 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class CustomerSpenderTest {
     CustomerSpender testCustomerSpender;
     int originalCustomerId = 1;
-    double originalHighestSpending = 10.0;
+    double originalTotalSpending = 10.0;
 
     @BeforeEach
     void setUp() {
-        testCustomerSpender = new CustomerSpender(originalCustomerId, originalHighestSpending);
+        testCustomerSpender = new CustomerSpender(originalCustomerId, originalTotalSpending);
     }
 
     @Test
@@ -26,11 +26,11 @@ class CustomerSpenderTest {
     }
 
     @Test
-    void getHighestSpending_Void_ShouldReturnCorrectNumber() {
+    void getTotalSpending_Void_ShouldReturnCorrectNumber() {
         double expectedSpending = 10;
         double actualSpending;
 
-        actualSpending = testCustomerSpender.getHighestSpending();
+        actualSpending = testCustomerSpender.getTotalSpending();
 
         assertEquals(expectedSpending, actualSpending);
     }

@@ -13,6 +13,7 @@ public class TrackArtistAlbumGenre {
         this.trackName = trackName;
         this.artistName = artistName;
         this.albumName = albumName;
+        this.genreName = genreName;
     }
 
     public String getTrackName() {

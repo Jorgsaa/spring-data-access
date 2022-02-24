@@ -11,7 +11,7 @@ tr > td {
     padding-bottom: 1vh;
 }
 
-.search-results-list-container {
+.search-results-table-container {
     box-sizing: border-box;
 
     padding: 1vh 1vw;

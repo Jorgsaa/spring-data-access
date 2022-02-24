@@ -4,7 +4,7 @@
   <div class="search-results-list-container" th:fragment="search-results-list">
     <h2 class="layout-header" th:text="${searchResults.size()} + ' results found'"></h2>
     <ul>
-      <li class="search-results-list-item" th:each="searchResult : ${searchResults}">
+      <li th:each="searchResult : ${searchResults}">
         <div th:replace="fragments/search-result-element :: search-result-element(${searchResult})"></div>
       </li>
     </ul>

@@ -1,0 +1,44 @@
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.small-list-container {
+    background-color: dimgray;
+
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.small-list-container > ul {
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+}
+
+.search-results-list-container {
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: dimgray;
+
+    text-align: center;
+
+    grid-column: 1 / 4;
+    overflow-y: scroll;
+}
+
+
+.search-results-list-container > ul {
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+}

@@ -6,7 +6,8 @@ import com.example.springdataaccess.data_access.util.SqliteConnectionHelper;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class CustomerGenreRepositoryImpl {
+public class CustomerGenreRepositoryImpl implements CustomerGenreRepository {
+
     public ArrayList<CustomerGenre> getFavoriteGenres(int customerID) {
         // Return the customers favorite genre (determined by how many songs the customer has bought having that genre).
         // If there are multiple genres that have been bought the same number of times, then return them all (hence returning an array)

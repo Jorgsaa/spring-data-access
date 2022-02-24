@@ -2,12 +2,15 @@ package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.CustomerGenre;
 import com.example.springdataaccess.data_access.util.SqliteConnectionHelper;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 
+@Repository
 public class CustomerGenreRepositoryImpl implements CustomerGenreRepository {
 
+    @Override
     public ArrayList<CustomerGenre> getFavoriteGenres(int customerID) {
         // Return the customers favorite genre (determined by how many songs the customer has bought having that genre).
         // If there are multiple genres that have been bought the same number of times, then return them all (hence returning an array)

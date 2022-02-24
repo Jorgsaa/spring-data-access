@@ -23,5 +23,9 @@ public class CustomerCountryController {
         this.customerCountries = customerCountries;
     }
 
-
+    @GetMapping("/country")
+    @Operation(summary = "Get customers in each country")
+    public ArrayList<CustomerCountry> findAll() {
+        return customerCountries.findAll();
+    }
 }

@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface GenreRepository {
 
-    List<Genre> findByName(String name);
-
     List<Genre> findRandom(int amount);
 
 }

@@ -18,19 +18,6 @@ public class GenreRepositoryImpl implements GenreRepository{
     }
 
     @Override
-    public List<Genre> findByName(String name) {
-        try {
-            return jdbcTemplate.query(
-                    "SELECT * FROM Genre WHERE Name LIKE ?",
-                    new BeanPropertyRowMapper<>(Genre.class),
-                    "%" + name + "%"
-            );
-        } catch (EmptyResultDataAccessException e) {
-            return List.of();
-        }
-    }
-
-    @Override
     public List<Genre> findRandom(int amount) {
         try {
             return jdbcTemplate.query(

@@ -3,11 +3,22 @@
 <body>
   <div class="search-results-list-container" th:fragment="search-results-list">
     <h2 class="layout-header" th:text="${searchResults.size()} + ' results found'"></h2>
-    <ul>
+    <table>
+      <tr>
+        <th><h2>Song</h2></th>
+        <th><h2>Album</h2></th>
+        <th><h2>Artist</h2></th>
+        <th><h2>Genre</h2></th>
+      </tr>
+      <th:block th:each="searchResult : ${searchResults}">
+        <div th:replace="fragments/search-result-element :: search-result-element(${searchResult})"></div>
+      </th:block>
+    </table>
+    <!--<ul>
       <li th:each="searchResult : ${searchResults}">
         <div th:replace="fragments/search-result-element :: search-result-element(${searchResult})"></div>
       </li>
-    </ul>
+    </ul>-->
   </div>
 </body>
 </html>

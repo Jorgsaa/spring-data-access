@@ -1,4 +1,4 @@
-.small-list-container > ul, .search-results-list-container > ul {
+.small-list-container > ul {
     box-sizing: border-box;
     padding: 1vh 1vw;
     margin: 0;
@@ -27,22 +27,4 @@ li {
 
 .small-list-container > ul > li > div > h3 {
     text-align: center;
-}
-
-.search-results-list-container {
-    box-sizing: border-box;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: dimgray;
-
-    text-align: center;
-
-    grid-column: 1 / 4;
-    overflow-y: scroll;
-}
-
-.search-result-element-container > * {
-    display: inline-block;
 }

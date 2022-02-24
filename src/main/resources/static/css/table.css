@@ -1,0 +1,26 @@
+table {
+    border-collapse: collapse;
+}
+
+tr > th {
+    border-bottom: solid black 1px;
+}
+
+tr > td {
+    background-color: darkgrey;
+    padding-bottom: 1vh;
+}
+
+.search-results-list-container {
+    box-sizing: border-box;
+
+    padding: 1vh 1vw;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: dimgray;
+
+    grid-column: 1 / 4;
+    overflow-y: scroll;
+}

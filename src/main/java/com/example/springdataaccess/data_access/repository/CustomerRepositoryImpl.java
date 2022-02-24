@@ -2,6 +2,7 @@ package com.example.springdataaccess.data_access.repository;
 
 import com.example.springdataaccess.data_access.model.Customer;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.UncategorizedSQLException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -26,11 +27,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public Optional<Customer> findById(Integer id) {
         try {
-            return Optional.ofNullable(jdbcTemplate.queryForObject(
-                    "SELECT * FROM Customer WHERE CustomerId = ?",
-                    new BeanPropertyRowMapper<>(Customer.class),
-                    id
-            ));
+            return Optional.ofNullable(jdbcTemplate.queryForObject("SELECT * FROM Customer WHERE CustomerId = ?", new BeanPropertyRowMapper<>(Customer.class), id));
         } catch (EmptyResultDataAccessException e) {
             return Optional.empty();
         }
@@ -39,11 +36,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public Optional<Customer> findByName(String name) {
         try {
-            return Optional.ofNullable(jdbcTemplate.queryForObject(
-                    "SELECT * FROM Customer WHERE Customer.FirstName || ' ' || Customer.LastName LIKE ?",
-                    new BeanPropertyRowMapper<>(Customer.class),
-                    "%" + name + "%"
-            ));
+            return Optional.ofNullable(jdbcTemplate.queryForObject("SELECT * FROM Customer WHERE Customer.FirstName || ' ' || Customer.LastName LIKE ?", new BeanPropertyRowMapper<>(Customer.class), "%" + name + "%"));
         } catch (EmptyResultDataAccessException e) {
             return Optional.empty();
         }
@@ -51,12 +44,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public List<Customer> findByPage(Integer limit, Integer offset) {
-        return jdbcTemplate.query(
-                "SELECT * FROM Customer LIMIT ? OFFSET ?",
-                new BeanPropertyRowMapper<>(Customer.class),
-                limit,
-                offset
-        );
+        return jdbcTemplate.query("SELECT * FROM Customer LIMIT ? OFFSET ?", new BeanPropertyRowMapper<>(Customer.class), limit, offset);
     }
 
     @Override

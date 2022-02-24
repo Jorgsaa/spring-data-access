@@ -2,9 +2,12 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
- 
-
-TODO: Fill out this long description.
+Web-facing application built using:
+- Spring Boot
+- Thymeleaf
+- Gradle
+- SQLite JDBC
+- Docker
 
 ## Table of Contents
 
